@@ -1,4 +1,5 @@
-from sqlalchemy import validates, hybrid_property, relationship
+from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy.orm import relationship, validates
 from config import db, bcrypt
 import re
 
@@ -7,11 +8,11 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(24), unique=True, nullable=False)
-    _password_hash = db.Column(db.string(100), nullable=False)
+    _password_hash = db.Column(db.String(100), nullable=False)
 
     #Relationships
-    blogs = relationship('Blog', back_populates='user', cascade='all, delete-orphan')
-    comments = relationship('Comment', back_populates='user', cascade='all, delete-orphan')
+    blogs = db.relationship('Blog', back_populates='user', cascade='all, delete-orphan')
+    comments = db.relationship('Comment', back_populates='user', cascade='all, delete-orphan')
 
     @hybrid_property
     def password_hash(self):
@@ -25,6 +26,13 @@ class User(db.Model):
 
     def authenticate(self, password):
         return bcrypt.check_password_hash(self._password_hash, password)
+    
+    def to_dict(self):
+        user_dict = {
+            'id': self.id,
+            'username': self.username
+        }
+        return user_dict
     
     def __repr__(self):
         return f'<User: {self.username}>'
@@ -40,8 +48,8 @@ class Blog(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     #Relationships
-    user = relationship('User', back_populates='blogs')
-    comments = relationship('Comment', back_populates='blog', cascade='all, delete-orphan')
+    user = db.relationship('User', back_populates='blogs')
+    comments = db.relationship('Comment', back_populates='blog', cascade='all, delete-orphan')
 
     @validates('title')
     def validate_title(self, key, title):
@@ -67,6 +75,17 @@ class Blog(db.Model):
             raise ValueError('Must be a valid URL and contain http:// or https://')
         return url.strip()
     
+    def to_dict(self):
+        blog_dict = {
+            'id': self.id,
+            'title': self.title,
+            'body_text': self.body_text,
+            'url': self.url,
+            'user_id': self.user_id,
+            'username': self.user.username
+        }
+        return blog_dict
+    
     def __repr__(self):
         return f'<Blog: {self.title}>'
     
@@ -80,14 +99,23 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id'), nullable=False)
 
-    user = relationship('User', back_populates='comments')
-    blog = relationship('Blog', back_populates='comments')
+    user = db.relationship('User', back_populates='comments')
+    blog = db.relationship('Blog', back_populates='comments')
 
     @validates('comment')
     def validate_comment(self, key, comment):
         if not comment or len(comment.strip()) == 0:
             raise ValueError('Comment cannot be empty')
         return comment.strip()
+    
+    def to_dict(self):
+        comment_dict = {
+            'id': self.id,
+            'comment': self.comment,
+            'user_id': self.user_id,
+            'blog_id': self.blog_id,
+            'username': self.user.username
+        }
     
     def __repr__(self):
         return f'<Comment by user: {self.user_id} on blog: {self.blog_id}>'

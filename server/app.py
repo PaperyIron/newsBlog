@@ -1,4 +1,6 @@
+#app.py
 from flask import Flask, request, session, jsonify
+from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_restful import Resource, Api
 from config import db, bcrypt
@@ -6,6 +8,7 @@ from models import User, Blog, Comment
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 app.config['SECRET_KEY'] = 'test-key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'

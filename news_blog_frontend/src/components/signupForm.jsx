@@ -1,0 +1,76 @@
+//signupForm.jsx
+import React, { useState} from "react";
+
+function SignupForm({ onLogin }) {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        setErrors([]);
+        setIsLoading(true);
+        fetch("/server/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username,
+                password,
+                password_confirmation: passwordConfirmation
+            }),
+        }).then((r) => {
+            setIsLoading(false);
+            if (r.ok) {
+                r.json().then((user) => onLogin(user));
+            } else {
+                r.json().then((err) => setErrors(err.error ? [err.error] : []))
+            }
+        })
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+            </div>
+            <div>
+                <label htmlFor="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </div>
+            <div>
+                <label htmlFor="password">Password Confirmation</label>
+                <input
+                    type="password"
+                    id="password_confirmation"
+                    value={passwordConfirmation}
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                />
+            </div>
+            <div>
+                <button type="submit">{isLoading ? "Loading..." : "Sign-up"}</button>
+            </div>
+            <div>
+                {errors.map((err) => (
+                    <p key={err}>{err}</p>
+                ))}
+            </div>
+        </form>
+    )
+}
+
+export default SignupForm

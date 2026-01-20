@@ -283,7 +283,7 @@ class CommentEdit(Resource):
                 return {'error': 'No data provided'}, 400
 
             if 'comment' in data:
-                comment.title = data['comment']     
+                comment.comment = data['comment']     
             
             db.session.commit()
 

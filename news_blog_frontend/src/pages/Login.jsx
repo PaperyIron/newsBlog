@@ -4,7 +4,7 @@ import LoginForm from "../components/loginform";
 import SignupForm from "../components/signupForm";
 
 function Login({onLogin}) {
-    const [showLogin, setShowLogin] = useState("")
+    const [showLogin, setShowLogin] = useState(true)
 
     return (
         <div>

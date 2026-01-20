@@ -117,6 +117,7 @@ class Comment(db.Model):
             'blog_id': self.blog_id,
             'username': self.user.username
         }
+        return comment_dict
     
     def __repr__(self):
         return f'<Comment by user: {self.user_id} on blog: {self.blog_id}>'

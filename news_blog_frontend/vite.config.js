@@ -7,11 +7,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/server': {  // Using /server instead of /api
+      '/server': {
         target: 'http://localhost:5555',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/server/, '')  // Remove /server prefix
+        rewrite: (path) => path.replace(/^\/server/, '')
       }
     },
   },

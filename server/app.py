@@ -95,6 +95,13 @@ def logout():
     session.pop('user_id', None)
     return jsonify({}), 204
 
+@app.route('/blogs/<int:id>', methods=['GET'])
+def get_blog(id):
+    blog = Blog.query.get(id)
+    if not blog:
+        return jsonify({'error': 'Blog not found'}), 404
+    return jsonify(blog.to_dict()), 200
+
 class BlogList(Resource):
     def get(self):
         page = request.args.get('page', 1, type=int)

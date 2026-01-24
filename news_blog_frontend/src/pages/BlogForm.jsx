@@ -118,7 +118,7 @@ function BlogForm({ user }) {
                         name="body_text"
                         value={formData.body_text}
                         onChange={handleChange}
-                        placeholder="Enter body text here, minimum 50 characters"
+                        placeholder="Enter body text, minimum 50 characters"
                         rows="10"
                         required
                     />

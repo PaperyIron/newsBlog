@@ -1,4 +1,3 @@
-//loginForm.jsx
 import React, { useState } from "react";
 
 function LoginForm({ onLogin} ) {

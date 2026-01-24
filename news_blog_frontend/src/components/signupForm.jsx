@@ -1,4 +1,3 @@
-//signupForm.jsx
 import React, { useState} from "react";
 
 function SignupForm({ onLogin }) {

@@ -1,4 +1,3 @@
-//Login.jsx
 import React, { useState } from "react";
 import LoginForm from "../components/loginform";
 import SignupForm from "../components/signupForm";
@@ -7,7 +6,7 @@ function Login({onLogin}) {
     const [showLogin, setShowLogin] = useState(true)
 
     return (
-        <div>
+        <div className="login-container">
         <h1>News Blog</h1>
         {showLogin ? (
             <>

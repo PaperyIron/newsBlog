@@ -15,6 +15,7 @@ function BlogForm({ user }) {
     const [isLoading, setIsLoading] = useState(false)
     const [isFetching, setIsFetching] = useState(isEditMode)
 
+    //is edit mode checks if the user owns the blog so that they can edit it
     useEffect(() => {
         if (isEditMode) {
             fetchBlog();

@@ -1,5 +1,5 @@
 # newsBlog
-    newsBlog is a website that is designed to give people a more in depth view on news articles.  Users are able to create, edit, and comment on any blog within the site.  Every post requires a title, body, and url so that users can view the source article.  
+newsBlog is a website that is designed to give people a more in depth view on news articles.  Users are able to create, edit, and comment on any blog within the site.  Every post requires a title, body, and url so that users can view the source article.  
 
 # To Run
 1. Clone this git repository to your local machine.  

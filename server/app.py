@@ -1,4 +1,3 @@
-#app.py
 from flask import Flask, request, session, jsonify
 from flask_cors import CORS
 from flask_migrate import Migrate

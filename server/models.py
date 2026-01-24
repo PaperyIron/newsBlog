@@ -1,4 +1,3 @@
-#models.py
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship, validates
 from config import db, bcrypt

@@ -13,6 +13,7 @@ function Home({ user, onLogout }) {
         fetchBlogs(currentPage);
     }, [currentPage]);
 
+    //fetch all blogs with pagination 
     function fetchBlogs(page = 1) {
         setIsLoading(true);
         setError(null);
@@ -87,6 +88,7 @@ function Home({ user, onLogout }) {
                 </button>
             </div>
 
+            {/* map blogs into a container for each blog */}
             <div className="all-blogs-list">
                 {blogs.length === 0 ? (
                     <p>No blog posts. Be the first to create one!</p>

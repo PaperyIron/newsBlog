@@ -28,58 +28,58 @@ def seed_data():
 
         print("Creating blogs...")
         blog1 = Blog(
-            title='Getting Started with Python Flask',
-            body_text='Flask is a lightweight and powerful web framework for Python. It provides the tools and libraries needed to build web applications quickly and efficiently. In this post, we will explore the basics of Flask and how to set up your first application.',
-            url='https://www.example.com/flask-tutorial',
+            title='Lorem Ipsum Dolor Sit Amet Consectetur',
+            body_text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            url='https://www.example.com/lorem-ipsum-1',
             user_id=user1.id
         )
 
         blog2 = Blog(
-            title='Understanding SQLAlchemy ORM',
-            body_text='SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives developers the full power and flexibility of SQL. It provides a full suite of well known enterprise-level persistence patterns, designed for efficient and high-performing database access.',
-            url='https://www.example.com/sqlalchemy-guide',
+            title='Vestibulum Ante Ipsum Primis Faucibus',
+            body_text='Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.',
+            url='https://www.example.com/vestibulum-ante',
             user_id=user1.id
         )
 
         blog3 = Blog(
-            title='Building RESTful APIs with Flask-RESTful',
-            body_text='Flask-RESTful is an extension for Flask that adds support for quickly building REST APIs. It encourages best practices with minimal setup. This tutorial will guide you through creating a complete REST API with proper HTTP methods and status codes.',
-            url='https://www.techblog.com/flask-restful-apis',
+            title='Praesent Sapien Massa Convallis Pellentesque',
+            body_text='Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada proin eget.',
+            url='https://www.techblog.com/praesent-sapien',
             user_id=user2.id
         )
 
         blog4 = Blog(
-            title='Database Migrations with Flask-Migrate',
-            body_text='Flask-Migrate is an extension that handles SQLAlchemy database migrations for Flask applications using Alembic. It makes it easy to keep your database schema in sync with your models as your application evolves over time. Learn how to set up and use migrations effectively.',
-            url='https://www.devnotes.com/flask-migrate-tutorial',
+            title='Quisque Velit Nisi Pretium Ut Lacinia',
+            body_text='Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus in magna.',
+            url='https://www.devnotes.com/quisque-velit',
             user_id=user2.id
         )
 
         blog5 = Blog(
-            title='Authentication and Authorization in Flask',
-            body_text='Security is crucial in web applications. This comprehensive guide covers implementing user authentication and authorization in Flask applications. We will discuss password hashing, session management, and protecting routes from unauthorized access.',
-            url='https://www.securityblog.com/flask-auth-guide',
+            title='Sed Porttitor Lectus Nibh Donec Rutrum',
+            body_text='Sed porttitor lectus nibh. Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit eget tincidunt nibh pulvinar.',
+            url='https://www.securityblog.com/sed-porttitor',
             user_id=user3.id
         )
 
         blog6 = Blog(
-            title='Best Practices for Flask Application Structure',
-            body_text='As your Flask application grows, organizing your code becomes increasingly important. This article explores best practices for structuring larger Flask applications, including blueprints, application factory pattern, and separating concerns effectively.',
-            url='https://www.pythonpatterns.com/flask-structure',
+            title='Nulla Porttitor Accumsan Tincidunt Mauris',
+            body_text='Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque auctor sit amet aliquam vel ullamcorper.',
+            url='https://www.pythonpatterns.com/nulla-porttitor',
             user_id=user3.id
         )
 
         blog7 = Blog(
-            title='Testing Flask Applications',
-            body_text='Testing is an essential part of developing robust applications. Learn how to write unit tests and integration tests for your Flask applications using pytest. We will cover testing routes, database operations, and API endpoints to ensure your application works as expected.',
-            url='https://www.testingpython.com/flask-testing',
+            title='Curabitur Aliquet Quam Id Dui Posuere',
+            body_text='Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh donec rutrum congue leo eget malesuada.',
+            url='https://www.testingpython.com/curabitur-aliquet',
             user_id=user4.id
         )
 
         blog8 = Blog(
-            title='Deploying Flask Apps to Production',
-            body_text='Moving from development to production requires careful planning and configuration. This guide covers deploying Flask applications using various platforms and tools, including Gunicorn, Nginx, Docker, and cloud platforms like Heroku and AWS.',
-            url='https://www.deployguide.com/flask-production',
+            title='Vivamus Magna Justo Lacinia Eget Consectetur',
+            body_text='Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.',
+            url='https://www.deployguide.com/vivamus-magna',
             user_id=user4.id
         )
 
@@ -88,91 +88,91 @@ def seed_data():
 
         print("Creating comments...")
         comment1 = Comment(
-            comment='Great introduction! This really helped me understand Flask basics.',
+            comment='Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.',
             user_id=user2.id,
             blog_id=blog1.id
         )
 
         comment2 = Comment(
-            comment='Thanks for sharing this. Do you have any tips for debugging Flask applications?',
+            comment='Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.',
             user_id=user3.id,
             blog_id=blog1.id
         )
 
         comment3 = Comment(
-            comment='Very comprehensive guide. The examples are clear and easy to follow.',
+            comment='Praesent sapien massa, convallis a pellentesque nec, egestas non nisi porttitor.',
             user_id=user4.id,
             blog_id=blog2.id
         )
 
         comment4 = Comment(
-            comment='I was struggling with ORM concepts, but this post cleared things up for me.',
+            comment='Curabitur non nulla sit amet nisl tempus convallis quis ac lectus vivamus.',
             user_id=user1.id,
             blog_id=blog2.id
         )
 
         comment5 = Comment(
-            comment='Excellent tutorial! The step-by-step approach made it easy to implement.',
+            comment='Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a cras ultricies ligula.',
             user_id=user1.id,
             blog_id=blog3.id
         )
 
         comment6 = Comment(
-            comment='Could you cover error handling in REST APIs in a follow-up post?',
+            comment='Quisque velit nisi, pretium ut lacinia in, elementum id enim curabitur arcu erat.',
             user_id=user4.id,
             blog_id=blog3.id
         )
 
         comment7 = Comment(
-            comment='This saved me so much time! Migrations are much clearer now.',
+            comment='Sed porttitor lectus nibh donec rutrum congue leo eget malesuada vestibulum.',
             user_id=user3.id,
             blog_id=blog4.id
         )
 
         comment8 = Comment(
-            comment='Really helpful article on authentication. Security is so important!',
+            comment='Nulla porttitor accumsan tincidunt mauris blandit aliquet elit eget tincidunt.',
             user_id=user2.id,
             blog_id=blog5.id
         )
 
         comment9 = Comment(
-            comment='I implemented this in my project and it works perfectly. Thanks!',
+            comment='Vivamus suscipit tortor eget felis porttitor volutpat curabitur aliquet quam id.',
             user_id=user4.id,
             blog_id=blog5.id
         )
 
         comment10 = Comment(
-            comment='The blueprint pattern has made my code so much more organized.',
+            comment='Pellentesque in ipsum id orci porta dapibus vestibulum ac diam sit amet quam.',
             user_id=user1.id,
             blog_id=blog6.id
         )
 
         comment11 = Comment(
-            comment='Great insights on application structure. Very practical advice.',
+            comment='Donec sollicitudin molestie malesuada proin eget tortor risus curabitur non nulla.',
             user_id=user2.id,
             blog_id=blog6.id
         )
 
         comment12 = Comment(
-            comment='Testing has always intimidated me, but this makes it approachable.',
+            comment='Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem vivamus magna.',
             user_id=user3.id,
             blog_id=blog7.id
         )
 
         comment13 = Comment(
-            comment='The pytest examples are really useful. Looking forward to more testing content.',
+            comment='Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.',
             user_id=user1.id,
             blog_id=blog7.id
         )
 
         comment14 = Comment(
-            comment='Just deployed my first Flask app using this guide. It went smoothly!',
+            comment='Sed porttitor lectus nibh donec rutrum congue leo eget malesuada vestibulum ac.',
             user_id=user2.id,
             blog_id=blog8.id
         )
 
         comment15 = Comment(
-            comment='Very thorough deployment guide. The Docker section was particularly helpful.',
+            comment='Nulla quis lorem ut libero malesuada feugiat pellentesque in ipsum id orci porta.',
             user_id=user3.id,
             blog_id=blog8.id
         )
@@ -188,6 +188,12 @@ def seed_data():
         print(f"Created {User.query.count()} users")
         print(f"Created {Blog.query.count()} blogs")
         print(f"Created {Comment.query.count()} comments")
+        
+        print("\nSample login credentials:")
+        print("Username: alice_tech | Password: password123")
+        print("Username: bob_writes | Password: password123")
+        print("Username: charlie_dev | Password: password123")
+        print("Username: diana_blogger | Password: password123")
 
 if __name__ == '__main__':
     seed_data()
